@@ -16,7 +16,7 @@ def reducer(key, values):
         hour_counts[hour] += count
     max_hours = get_max_hours(hour_counts)
     for max_hour in max_hours:
-        yield '%s\t%s' % (author_id, max_hour)
+        yield '%s\t%02d' % (author_id, max_hour)
 
 def get_max_hours(hour_counts):
     max_hours = []
