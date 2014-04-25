@@ -36,7 +36,7 @@ def mapper(stdin):
 		    # Sample added_at:
 		    # 2012-02-25 08:09:06.787181+00
 		    added_at = added_at.strip()
-		    hour = int(added_at[11:13])
+		    hour = added_at[11:13]
 
             yield '%s\t%s\t%s' % (author_id, hour, 1)
         
