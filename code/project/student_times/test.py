@@ -6,6 +6,7 @@
 import unittest
 import mapper
 import reducer
+from random import shuffle
 
 class StudentTimesMapperTest(unittest.TestCase):
     def test_mapper(self):
@@ -31,14 +32,15 @@ class StudentTimesMapperTest(unittest.TestCase):
                 '"active_revision_id"\t"extra"\t"extra_ref_id"\t"extra_count"\t"marked"' 
         expected3 = '2\t08\t1'
 
-        my_input = [line1, line2, line3] 
+        my_input = [line1, line2, line3]
+        shuffle(my_input) 
         my_input.insert(0, header)
         expected = [expected1, expected2, expected3]
 
         result = [] 
         for output in mapper.mapper(my_input):
             result.append(output)
-        self.assertEqual(expected, result)
+        self.assertTrue(sorted(expected) == sorted(result))
 
     def test_reducer(self):
         key = '1'
