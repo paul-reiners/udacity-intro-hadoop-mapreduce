@@ -3,9 +3,8 @@ data/forum_node.tsv
 data/forum_users.tsv
 data/.DS_Store
 code/project/student_times/.DS_Store
-code/project/student_times/student_times_mapper_test~
-code/project/student_times/student_times_mapper.pyc
+*~
+*.pyc
 reports/~$results.xlsx
-code/project/forum_node_key.txt~
 data/._forum_node.tsv
 data/._forum_users.tsv

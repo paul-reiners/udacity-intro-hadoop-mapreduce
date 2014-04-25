@@ -22,11 +22,13 @@ def mapper(stdin):
             node_type = line[5]
             if node_type == "question":
                 newLine = [theID, "0", "question", len(body)]
-            elif node_type == "answer"
+            elif node_type == "answer":
                 parent_id = line[6]
-                newLine = [theID, "1", "answer", len(body)]
+                newLine = [parent_id, "1", "answer", len(body)]
 
-            writer.writerow(newLine)
+            if node_type == "question" or node_type == "answer":
+                writer.writerow(newLine)
         
 if __name__ == "__main__":
     mapper(sys.stdin)
+
