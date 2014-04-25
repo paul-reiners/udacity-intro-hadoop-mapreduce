@@ -5,6 +5,7 @@
 
 import unittest
 import mapper
+import reducer
 
 class StudentTimesMapperTest(unittest.TestCase):
     def test_mapper(self):
@@ -14,6 +15,16 @@ class StudentTimesMapperTest(unittest.TestCase):
 
         result = [] 
         for output in mapper.mapper(input):
+            result.append(output)
+        self.assertEqual(expected, result)
+
+    def test_reducer(self):
+        key = '1'
+        values = [['17', '1']]
+        expected = ['1\t17']
+
+        result = []
+        for output in reducer.reducer(key, values):
             result.append(output)
         self.assertEqual(expected, result)
 

@@ -2,28 +2,23 @@
 
 import sys
 import csv
+import runner
 
-def reducer():
+def reducer(key, values):
     users = {}
-    reader = csv.reader(sys.stdin, delimiter='\t')
-    writer = csv.writer(sys.stdout, delimiter='\t', quotechar='"', quoting=csv.QUOTE_ALL)
     current_author_id = None
     hour_counts = [0] * 24
     
-    for line in reader:
-	if len(line) == 3:
-            author_id = line[0]
-            hour = int(line[1])
-            count = int(line[2])
-            if current_author_id is None or author_id != current_author_id:
-                if not current_author_id is None:
-                    write_record(current_author_id, hour_counts, writer)
-                hour_counts = [0] * 24
-                current_author_id = author_id
-            hour_counts[hour] += count
-    write_record(current_author_id, hour_counts, writer)
+    author_id = key
+    for value in values:
+        hour = int(value[0])
+        count = int(value[1])
+        hour_counts[hour] += count
+    max_hours = get_max_hours(hour_counts)
+    for max_hour in max_hours:
+        yield '%s\t%s' % (author_id, max_hour)
 
-def get_max_hour(hour_counts):
+def get_max_hours(hour_counts):
     max_hours = []
     max_hour_count = -1
     for i in range(24):
@@ -34,12 +29,7 @@ def get_max_hour(hour_counts):
             max_hours.append(i)
     
     return max_hours
-
-def write_record(author_id, hour_counts, writer):
-    max_hours = get_max_hour(hour_counts)
-    for max_hour in max_hours:
-        newLine = [author_id, max_hour]
-        writer.writerow(newLine)
             
 if __name__ == "__main__":
-    reducer()
+    runner.run_reducer(reducer)
+
