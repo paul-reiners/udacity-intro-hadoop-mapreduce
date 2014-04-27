@@ -1,0 +1,4 @@
+To run unit tests:
+
+1) cd code
+2) python -m unittest discover
