@@ -4,8 +4,8 @@
 #   http://blog.zhengdong.me/2012/07/30/streaming-python-unit-testing
 
 import unittest
-import mapper
-import reducer
+import project.student_times.mapper
+import project.student_times.reducer
 from random import shuffle
 
 class StudentTimesMapperTest(unittest.TestCase):

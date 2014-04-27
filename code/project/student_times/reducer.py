@@ -2,7 +2,7 @@
 
 import sys
 import csv
-import runner
+import lib.pydoop.runner
 
 def reducer(key, values):
     users = {}
