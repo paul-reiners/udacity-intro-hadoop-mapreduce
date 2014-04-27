@@ -32,4 +32,3 @@ def get_max_hours(hour_counts):
             
 if __name__ == "__main__":
     runner.run_reducer(reducer)
-

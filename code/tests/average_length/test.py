@@ -42,5 +42,18 @@ class StudentTimesMapperTest(unittest.TestCase):
             result.append(output)
         self.assertTrue(sorted(expected) == sorted(result))
 
+    def test_reducer(self):
+        keys = ['1', '2', '3']
+        valuess = [[['0', 'question', '8'], ['1', 'answer', '15']], [['0', 'question', '3'], ['1', 'answer', '4'], ['1', 'answer', '6']], [['0', 'question', '7']]]
+        expecteds = [['1\t8\t15.0'], ['2\t3\t5.0'], ['3\t7\tNA']]
+
+        for i in range(len(keys)):
+            key = keys[i]
+            values = valuess[i]
+            result = []
+            for output in reducer.reducer(key, values):
+                result.append(output)
+            self.assertEqual(expecteds[i], result)
+
 if __name__ == '__main__':
     unittest.main()
