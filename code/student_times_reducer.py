@@ -6,7 +6,7 @@ import csv
 def reducer():
     users = {}
     reader = csv.reader(sys.stdin, delimiter='\t')
-    writer = csv.writer(sys.stdout, delimiter='\t', quotechar='"', quoting=csv.QUOTE_ALL)
+    writer = csv.writer(sys.stdout, delimiter='\t', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     current_author_id = None
     hour_counts = [0] * 24
     
