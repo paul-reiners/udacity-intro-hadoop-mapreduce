@@ -27,8 +27,7 @@ def mapper(stdin):
                 tagnamesStr = line[2]
                 tagnames = tagnamesStr.split()
                 for tagname in tagnames:
-                    yield '%s\t%s' % (tagname, "1")
+                    writer.writerow([tagname, "1"])
         
 if __name__ == "__main__":
-    for output in mapper(sys.stdin):
-        print output
+    mapper(sys.stdin)

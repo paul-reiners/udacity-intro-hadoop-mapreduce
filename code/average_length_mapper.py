@@ -32,4 +32,3 @@ def mapper(stdin):
         
 if __name__ == "__main__":
     mapper(sys.stdin)
-
