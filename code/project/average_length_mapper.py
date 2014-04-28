@@ -13,22 +13,27 @@ import sys
 import csv
 
 def mapper(stdin):
+    """
+    MapReduce Mapper.  Output is tab-delimited.  Each line gives the question
+    ID, 0/1, question/answer, and body length.
+    """
     reader = csv.reader(stdin, delimiter='\t')
     # Skip header.
     reader.next()
-    writer = csv.writer(sys.stdout, delimiter='\t', quotechar='"', quoting=csv.QUOTE_ALL)
+    writer \
+        = csv.writer(
+            sys.stdout, delimiter='\t', quotechar='"', quoting=csv.QUOTE_ALL)
 
     for line in reader:
         if len(line) == 19:
-            theID = line[0]
+            the_id = line[0]
             body = line[4]
-            # "node_type": type of the node, either "question", "answer" or "comment"
             node_type = line[5]
             if node_type == "question":
-                writer.writerow([theID, "0", "question", len(body)])
+                writer.writerow([the_id, "0", "question", len(body)])
             elif node_type == "answer":
                 parent_id = line[6]
                 writer.writerow([parent_id, "1", "answer", len(body)])
-        
+
 if __name__ == "__main__":
     mapper(sys.stdin)
