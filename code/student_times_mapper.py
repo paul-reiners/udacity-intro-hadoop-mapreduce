@@ -43,4 +43,3 @@ def mapper(stdin):
 if __name__ == "__main__":
     for output in mapper(sys.stdin):
         print output
-

@@ -25,10 +25,10 @@ def mapper(stdin):
             # "node_type": type of the node, either "question", "answer" or "comment"
             node_type = line[5]
             if node_type == "question":
-                yield '%s\t%s\t%s\t%s' % (theID, "0", "question", len(body))
+                writer.writerow([theID, "0", "question", len(body)])
             elif node_type == "answer":
                 parent_id = line[6]
-                yield '%s\t%s\t%s\t%s' % (parent_id, "1", "answer", len(body))
+                writer.writerow([parent_id, "1", "answer", len(body)])
         
 if __name__ == "__main__":
     mapper(sys.stdin)
