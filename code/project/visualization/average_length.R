@@ -7,8 +7,6 @@ library(ggplot2)
 scatterplot <- ggplot(average.length, aes(x = QuestionLength, y = AverageAnswerLength))
 answer.question.plot <- scatterplot + geom_point(colour = "blue", size = 1) + ggtitle("Average Answer Length vs. Question Length")
 
-pdf("plots/AverageLength.pdf")
-
+png("plots/AverageLength.png")
 print(answer.question.plot)
-
 dev.off()

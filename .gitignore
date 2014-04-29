@@ -12,3 +12,4 @@ data/._forum_users.tsv
 *.komodoproject
 test/*_actual.txt
 test/*_actual.tsv
+.Rhistory

@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+from __future__ import print_function
 import sys
 import csv
 
@@ -25,9 +26,16 @@ def reducer():
                 ids.append(the_id)
     write_record(current_word, word_count, ids, writer)
 
+def error(*objs):
+    print("ERROR: ", *objs, file=sys.stderr)
+
 def write_record(word, word_count, ids, writer):
-    ids.sort()
-    writer.writerow([word, word_count, ids])
+    try:
+        # Sometimes library call will fail.  Perhaps because of too long
+        # a list of ids.
+        writer.writerow([word, word_count, ids])
+    except IOError as e:
+        error(e)
 
 if __name__ == "__main__":
     reducer()
