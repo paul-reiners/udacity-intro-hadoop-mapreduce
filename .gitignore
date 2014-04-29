@@ -11,3 +11,4 @@ data/._forum_users.tsv
 *.DS_Store
 *.komodoproject
 test/*_actual.txt
+test/*_actual.tsv
