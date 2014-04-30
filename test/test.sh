@@ -4,7 +4,7 @@ function pause() {
    read -p "$*"
 }
 
-cd /Users/paulreiners/Dropbox/education/Udacity/CS/udacity-intro-hadoop-mapreduce/code/project
+cd /Users/paulreiners/Dropbox/education/Udacity/CS/udacity-intro-hadoop-mapreduce/code/project/map_reduce
 
 cat student_test_posts.csv | python student_times_mapper.py | sort | python student_times_reducer.py > ../../test/student_times_actual.tsv
 diff ../../test/student_times_expected.txt ../../test/student_times_actual.tsv
@@ -24,3 +24,7 @@ pause 'Press [Enter] key to continue...'
 
 cd /Users/paulreiners/Dropbox/education/Udacity/CS/udacity-intro-hadoop-mapreduce/code/index
 cat ../../test/student_test_posts.csv | python mapper.py | sort | python reducer.py
+pause 'Press [Enter] key to continue...'
+
+cd /Users/paulreiners/Dropbox/education/Udacity/CS/udacity-intro-hadoop-mapreduce/code/project/map_reduce
+cat ../../../test/student_test_posts.csv | python response_time_mapper.py
