@@ -1,12 +1,23 @@
 #!/usr/bin/python
+"""
+A MapReduce program that creates an index of all words that can be found in the
+body of a forum post and node id they can be found in.
+
+We do not include HTML markup in our index, nor strings that are not words (for
+a somewhat loose definition of "word"), nor common words.
+"""
 
 from __future__ import print_function
 import sys
 import csv
 
 def reducer():
+    """ MapReduce Reducer. """
     reader = csv.reader(sys.stdin, delimiter='\t')
-    writer = csv.writer(sys.stdout, delimiter='\t', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+    writer = \
+        csv.writer(
+            sys.stdout, delimiter='\t', quotechar='"',
+            quoting=csv.QUOTE_MINIMAL)
     current_word = None
     word_count = 0
     ids = []
@@ -27,15 +38,18 @@ def reducer():
     write_record(current_word, word_count, ids, writer)
 
 def error(*objs):
+    """ Output error message to standard error. """
     print("ERROR: ", *objs, file=sys.stderr)
 
 def write_record(word, word_count, ids, writer):
+    """ Write the line. """
+    ids.sort()
     try:
         # Sometimes library call will fail.  Perhaps because of too long
         # a list of ids.
         writer.writerow([word, word_count, ids])
-    except IOError as e:
-        error(e)
+    except IOError as ex:
+        error(ex)
 
 if __name__ == "__main__":
     reducer()

@@ -4,7 +4,7 @@ A MapReduce program that creates an index of all words that can be found in the
 body of a forum post and node id they can be found in.
 
 We do not include HTML markup in our index, nor strings that are not words (for
-a somewhat loose definition of "word".)
+a somewhat loose definition of "word"), nor common words.
 
 The MLStripper class and strip_tags method were written by Eloff
 (http://stackoverflow.com/a/925630).  The list of English stop words was taken
@@ -66,7 +66,6 @@ STOP_WORDS = \
 class MLStripper(HTMLParser):
     """ From http://stackoverflow.com/a/925630 """
     def __init__(self):
-        HTMLParser.__init__()
         self.reset()
         self.fed = []
     def handle_data(self, d):
@@ -105,4 +104,3 @@ def mapper():
 
 if __name__ == "__main__":
     mapper()
-

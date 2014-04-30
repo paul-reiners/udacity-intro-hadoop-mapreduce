@@ -1,6 +1,6 @@
 #!/bin/bash
 # init
-function pause(){
+function pause() {
    read -p "$*"
 }
 
@@ -20,3 +20,7 @@ pause 'Press [Enter] key to continue...'
 
 cat student_test_posts.csv | python study_groups_mapper.py | sort | python study_groups_reducer.py > ../../test/study_groups_actual.tsv
 diff ../../test/study_groups_expected.txt ../../test/study_groups_actual.tsv
+pause 'Press [Enter] key to continue...'
+
+cd /Users/paulreiners/Dropbox/education/Udacity/CS/udacity-intro-hadoop-mapreduce/code/index
+cat ../../test/student_test_posts.csv | python mapper.py | sort | python reducer.py
