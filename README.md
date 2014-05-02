@@ -1,5 +1,7 @@
-Final Project for Udacity Intro to Hadoop and MapReduce
+Udacity Intro to Hadoop and MapReduce
 =======================================================
+Final Project 
+-------------
 
 This class is my final project for [Udacity's Hadoop and MapReduce course](https://www.udacity.com/course/ud617).  
 
