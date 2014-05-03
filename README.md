@@ -26,12 +26,12 @@ The raw data for this project is available [here](http://content.udacity-data.co
 ### Final Report
 
 #### Study Groups
-[MapReduce output](https://raw.githubusercontent.com/paul-reiners/udacity-intro-hadoop-mapreduce/master/results/study_groups.tsv)
+[MapReduce output](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/results/study_groups.tsv)
 
 #### Student Times
 ![Student Times](https://raw.githubusercontent.com/paul-reiners/udacity-intro-hadoop-mapreduce/master/plots/student-times.png)
 
-[MapReduce output]()
+[MapReduce output](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/results/student_times.tsv)
 
 #### Top Tags
 ![Top Tags](https://raw.githubusercontent.com/paul-reiners/udacity-intro-hadoop-mapreduce/master/plots/popular-tags.png)
