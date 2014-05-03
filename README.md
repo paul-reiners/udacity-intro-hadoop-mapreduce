@@ -31,14 +31,20 @@ The raw data for this project is available [here](http://content.udacity-data.co
 #### Student Times
 ![Student Times](https://raw.githubusercontent.com/paul-reiners/udacity-intro-hadoop-mapreduce/master/plots/student-times.png)
 
+[Visualization code](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/code/project/visualization/student_times.R)
+
 [MapReduce output](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/results/student_times.tsv)
 
 #### Top Tags
 ![Top Tags](https://raw.githubusercontent.com/paul-reiners/udacity-intro-hadoop-mapreduce/master/plots/popular-tags.png)
 
+[Visualization code](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/code/project/visualization/popular_tags.R)
+
 [MapReduce output](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/results/popular_tags.tsv)
 
 #### Post and Answer Length
 ![Post and Answer Length](https://raw.githubusercontent.com/paul-reiners/udacity-intro-hadoop-mapreduce/master/plots/average-length.png)
+
+[Visualization code](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/code/project/visualization/average_length.R)
 
 [MapReduce output](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/results/average_length.tsv)
