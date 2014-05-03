@@ -15,7 +15,7 @@ The raw data for this project is available [here](http://content.udacity-data.co
 
 [Code](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/tree/master/code/project/map_reduce)
 * [study_groups_mapper.py] (https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/code/project/map_reduce/study_groups_mapper.py)     [Study Groups Exercise]
-* [study_groups_reducer.py](/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/code/project/map_reduce/study_groups_reducer.py)       [Study Groups Exercise]
+* [study_groups_reducer.py](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/code/project/map_reduce/study_groups_reducer.py)       [Study Groups Exercise]
 * [student_times_mapper.py] (https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/code/project/map_reduce/student_times_mapper.py)      [Student Times Exercise]
 * [student_times_reducer.py](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/code/project/map_reduce/student_times_reducer.py)      [Student Times Exercise]
 * [popular_tags_mapper.py](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/code/project/map_reduce/popular_tags_mapper.py)        [Top Tags Exercise]
