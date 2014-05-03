@@ -26,7 +26,7 @@ Other Questions
 One interesting question is:
 * How long are the response times for a question posted on the forum?
 
-This isn't a question, but it would be interesting to have visualizations of the data we have obtained through our MapReduce programs.
+It would be interesting to have visualizations of the data we have obtained through our MapReduce programs.
 I have written R code to create such visualizations.
 
 The R code is available here:
