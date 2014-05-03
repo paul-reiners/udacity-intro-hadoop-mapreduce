@@ -22,3 +22,12 @@ The raw data for this project is available [here](http://content.udacity-data.co
 * [popular_tags_reducer.py](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/code/project/map_reduce/popular_tags_reducer.py)        [Top Tags Exercise]
 * [average_length_mapper.py](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/code/project/map_reduce/average_length_mapper.py)      [Post and Answer Length Exercise]
 * [average_length_reducer.py](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/code/project/map_reduce/average_length_reducer.py)      [Post and Answer Length Exercise]
+
+### Final Report
+#### Study Groups
+#### Student Times
+#### Top Tags
+![Top Tags](https://raw.githubusercontent.com/paul-reiners/udacity-intro-hadoop-mapreduce/master/plots/popular-tags.png)
+#### Post and Answer Length
+![Post and Answer Length](https://raw.githubusercontent.com/paul-reiners/udacity-intro-hadoop-mapreduce/master/plots/average-length.png)
+
