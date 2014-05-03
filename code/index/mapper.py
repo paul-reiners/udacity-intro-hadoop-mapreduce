@@ -7,11 +7,12 @@ We do not include HTML markup in our index, nor strings that are not words (for
 a somewhat loose definition of "word"), nor common words.
 
 The MLStripper class and strip_tags method were written by Eloff
-(http://stackoverflow.com/a/925630).  The list of English stop words was taken
-from http://norm.al/2009/04/14/list-of-english-stop-words/.  The rest of the
+(http://stackoverflow.com/a/925630). The list of English stop words was taken
+from http://norm.al/2009/04/14/list-of-english-stop-words/. The rest of the
 code is my work.
 """
 
+from __future__ import print_function
 import sys
 import csv
 import re
@@ -80,6 +81,10 @@ def strip_tags(html):
     stripper.feed(html)
     return stripper.get_data()
 
+def error(*objs):
+    """ Output error message to standard error. """
+    print("ERROR: ", *objs, file=sys.stderr)
+
 def mapper():
     """ MapReducer Mapper. """
     reader = csv.reader(sys.stdin, delimiter='\t')
@@ -91,16 +96,26 @@ def mapper():
     reader.next()
     for line in reader:
         body = line[4]
-        # Get rid of HTML tags.
-        body = strip_tags(body)
+	try:
+        	# Get rid of HTML tags.
+		# May fail for weird characters.
+        	body = strip_tags(body)
+	except UnicodeDecodeError as ex:
+		error(ex)
+		continue
         node_id = line[0]
         parts = re.split(r'\s|[.!?:;"()<>[\]#$=\-/,]', body)
         # Filter out common English words.
         parts = [w for w in parts if not w.lower() in STOP_WORDS]
         for part in parts:
-            # Only accept words, not gobbledygook.
-            if re.match(r"^\w+$", part):
-                writer.writerow([part.lower(), 1, node_id])
+	    try:
+	    	# Only accept words, not gobbledygook.
+	    	# May fail for non-ASCII characters
+	    	if re.match(r"^\w+$", part):
+	        	writer.writerow([part.lower(), 1, node_id])
+	    except UnicodeDecodeError as ex:
+		error(ex)
 
 if __name__ == "__main__":
     mapper()
+
