@@ -26,6 +26,7 @@ The raw data for this project is available [here](http://content.udacity-data.co
 ### Final Report
 #### Study Groups
 #### Student Times
+![Student Times](https://raw.githubusercontent.com/paul-reiners/udacity-intro-hadoop-mapreduce/master/plots/student-times.png)
 #### Top Tags
 ![Top Tags](https://raw.githubusercontent.com/paul-reiners/udacity-intro-hadoop-mapreduce/master/plots/popular-tags.png)
 #### Post and Answer Length
