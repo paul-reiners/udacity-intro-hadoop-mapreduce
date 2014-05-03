@@ -9,8 +9,7 @@ It is also intended as a portfolio project for my Hadoop and MapReduce skills.
 
 The raw data for this project is available [here](http://content.udacity-data.com/course/hadoop/forum_data.tar.gz).
 
-Required Files
---------------
+### Required Files
 
 [Answers to the Final Project questions](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/doc/FinalProjectQuestions.md)
 
