@@ -47,7 +47,7 @@ def write_record(word, word_count, ids, writer):
     try:
         # Sometimes library call will fail.  Perhaps because of too long
         # a list of ids.
- 	print(word, "\t", word_count, "\t", ids)
+        print(word, "\t", word_count, "\t", ids)
     except IOError as ex:
         error(ex)
 

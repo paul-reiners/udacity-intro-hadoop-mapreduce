@@ -96,25 +96,25 @@ def mapper():
     reader.next()
     for line in reader:
         body = line[4]
-	try:
-        	# Get rid of HTML tags.
-		# May fail for weird characters.
-        	body = strip_tags(body)
-	except UnicodeDecodeError as ex:
-		error(ex)
-		continue
+        try:
+            # Get rid of HTML tags.
+            # May fail for weird characters.
+            body = strip_tags(body)
+        except UnicodeDecodeError as ex:
+            error(ex)
+            continue
         node_id = line[0]
         parts = re.split(r'\s|[.!?:;"()<>[\]#$=\-/,]', body)
         # Filter out common English words.
         parts = [w for w in parts if not w.lower() in STOP_WORDS]
         for part in parts:
-	    try:
-	    	# Only accept words, not gobbledygook.
-	    	# May fail for non-ASCII characters
-	    	if re.match(r"^\w+$", part):
-	        	writer.writerow([part.lower(), 1, node_id])
-	    except UnicodeDecodeError as ex:
-		error(ex)
+            try:
+                # Only accept words, not gobbledygook.
+                # May fail for non-ASCII characters
+                if re.match(r"^\w+$", part):
+                    writer.writerow([part.lower(), 1, node_id])
+            except UnicodeDecodeError as ex:
+                error(ex)
 
 if __name__ == "__main__":
     mapper()
