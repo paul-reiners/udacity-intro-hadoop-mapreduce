@@ -9,7 +9,8 @@ It is also intended as a portfolio project for my Hadoop and MapReduce skills.
 
 The raw data for this project is available [here](http://content.udacity-data.com/course/hadoop/forum_data.tar.gz).
 
-### Required Files
+### Files
+#### Required
 
 [Answers to the Final Project questions](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/doc/FinalProjectQuestions.md)
 
@@ -22,6 +23,11 @@ The raw data for this project is available [here](http://content.udacity-data.co
 * [popular_tags_reducer.py](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/code/project/map_reduce/popular_tags_reducer.py)        [Top Tags Exercise]
 * [average_length_mapper.py](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/code/project/map_reduce/average_length_mapper.py)      [Post and Answer Length Exercise]
 * [average_length_reducer.py](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/code/project/map_reduce/average_length_reducer.py)      [Post and Answer Length Exercise]
+
+#### Extra Credit
+Code [Average response time in minutes to question]
+* [response_time_mapper.py](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/code/project/map_reduce/response_time_mapper.py) 
+* [response_time_reducer.py](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/code/project/map_reduce/response_time_reducer.py)
 
 ### Final Report
 
