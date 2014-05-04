@@ -1,16 +1,13 @@
 #!/usr/bin/python
 """
-We are interested to see if there is a correlation between the length of a post
-and the length of answers.
+We see what the response time is for answers to questions.
 
-Write a mapreduce program that would process the forum_node data and output the
-length of the post and the average answer (just answer, not comment) length for
-each post. You will have to decide how to write both the mapper and the reducer
-to get the required result.
+This is the Reducer.
 """
 
 import sys
 import csv
+from datetime import datetime
 
 def reducer():
     """
@@ -21,46 +18,43 @@ def reducer():
         csv.writer(
             sys.stdout, delimiter='\t', quotechar='"',
             quoting=csv.QUOTE_MINIMAL)
-    answer_count = 0
-    answer_total_length = 0
-    question_body_length = None
+    question_added_at = None
+    min_minutes_diff = None
     current_id = None
+    # Example date: 2012-02-22 21:36:17.077627+00
+    prefix_len = len('2012-02-22 21:36:17')
+    date_format =   '%Y-%m-%d %H:%M:%S'
     for line in reader:
         if len(line) == 4:
             the_id = line[0]
             if current_id is None or the_id != current_id:
                 if not current_id is None:
-                    write_record(
-                        current_id, question_body_length, answer_count,
-                        answer_total_length, writer)
-                answer_count = 0
-                answer_total_length = 0
-                question_body_length = None
+                    write_record(current_id, min_minutes_diff, writer)
+		question_time = None
+                shortest_reponse_time = None
                 current_id = the_id
 
             node_type = line[2]
-            body_length = int(line[3])
+            added_at = line[3]
             if node_type == "question":
-                question_body_length = body_length
+                question_added_at = datetime.strptime(added_at[:prefix_len], date_format)
             else:
-                answer_count += 1
-                answer_total_length += body_length
-    write_record(
-        current_id, question_body_length, answer_count, answer_total_length,
-        writer)
+                answer_added_at = datetime.strptime(added_at[:prefix_len], date_format)
+                dt = answer_added_at - question_added_at
+		minutes_diff = dt.seconds / 60
+		if min_minutes_diff is None or minutes_diff < min_minutes_diff:
+			min_minutes_diff = minutes_diff
+    write_record(current_id, min_minutes_diff, writer)
 
-def write_record(
-    the_id, question_body_length, answer_count, answer_total_length, writer):
+def write_record(the_id, minutes_diff, writer):
     """
     Outputs
-        Question Node ID |	Question Length |	Average Answer Length
+        Question Node ID |	Response Time (in minutes)
     """
-    if answer_count == 0:
-        writer.writerow([the_id, question_body_length, "0"])
+    if minutes_diff is None:
+        writer.writerow([the_id, "NA"])
     else:
-        writer.writerow(
-            [the_id, question_body_length,
-             float(answer_total_length) / float(answer_count)])
+        writer.writerow([the_id, minutes_diff])
 
 if __name__ == "__main__":
     reducer()
