@@ -14,3 +14,8 @@ test/*_actual.txt
 test/*_actual.tsv
 .Rhistory
 code/index/index.tsv
+code/index/mapper_output.tsv
+code/project/map_reduce/final_output.tsv
+code/project/map_reduce/mapper_output.tsv
+code/project/map_reduce/sorted_mapper_output.tsv
+        

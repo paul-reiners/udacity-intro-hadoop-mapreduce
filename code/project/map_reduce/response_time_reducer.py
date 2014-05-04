@@ -30,7 +30,7 @@ def reducer():
             if current_id is None or the_id != current_id:
                 if not current_id is None:
                     write_record(current_id, min_minutes_diff, writer)
-		question_time = None
+                question_time = None
                 shortest_reponse_time = None
                 current_id = the_id
 
@@ -40,10 +40,11 @@ def reducer():
                 question_added_at = datetime.strptime(added_at[:prefix_len], date_format)
             else:
                 answer_added_at = datetime.strptime(added_at[:prefix_len], date_format)
-                dt = answer_added_at - question_added_at
-		minutes_diff = dt.seconds / 60
-		if min_minutes_diff is None or minutes_diff < min_minutes_diff:
-			min_minutes_diff = minutes_diff
+                if not question_added_at is None:
+                    dt = answer_added_at - question_added_at
+                    minutes_diff = dt.seconds / 60
+                    if min_minutes_diff is None or minutes_diff < min_minutes_diff:
+                        min_minutes_diff = minutes_diff
     write_record(current_id, min_minutes_diff, writer)
 
 def write_record(the_id, minutes_diff, writer):
