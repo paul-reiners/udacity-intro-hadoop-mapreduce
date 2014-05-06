@@ -54,3 +54,10 @@ Code [Average response time in minutes to question]
 [Visualization code](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/code/project/visualization/average_length.R)
 
 [MapReduce output](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/results/average_length.tsv)
+
+#### Response Time
+![Response Time](https://raw.githubusercontent.com/paul-reiners/udacity-intro-hadoop-mapreduce/master/plots/response-time.png)
+
+[Visualization code](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/code/project/visualization/response_time.R)
+
+[MapReduce output](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/results/response_time.tsv)
