@@ -23,8 +23,23 @@ I have implemented a solution that has these improvements:
 
 Other Questions
 ---------------
+
+### Response Time
+
 One interesting question is:
 * How long are the response times for a question posted on the forum?
+
+Code [Average response time in minutes to question]
+* [response_time_mapper.py](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/code/project/map_reduce/response_time_mapper.py) 
+* [response_time_reducer.py](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/code/project/map_reduce/response_time_reducer.py)
+
+![Response Time](https://raw.githubusercontent.com/paul-reiners/udacity-intro-hadoop-mapreduce/master/plots/response-time.png)
+
+[Visualization code](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/code/project/visualization/response_time.R)
+
+[MapReduce output](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/results/response_time.tsv)
+
+### Visualization
 
 It would be interesting to have visualizations of the data we have obtained through our MapReduce programs.
 I have written R code to create such visualizations.
