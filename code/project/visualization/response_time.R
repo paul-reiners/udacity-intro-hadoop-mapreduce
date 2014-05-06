@@ -10,5 +10,5 @@ frequencies = count(response.time, c("ResponseTimeInMinutes"))
 library(ggplot2)
 ggplot(frequencies, aes(x=ResponseTimeInMinutes, y=freq)) +
   geom_bar(stat="identity", fill="dark blue") +
-  ylab("Response time in minutes from question until first answer") +
-  xlab("Minutes")
+  ylab("Frequency") +
+  xlab("Response time in minutes from question until first answer")
