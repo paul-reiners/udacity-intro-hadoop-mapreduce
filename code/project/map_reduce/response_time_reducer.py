@@ -30,6 +30,7 @@ def reducer():
             if current_id is None or the_id != current_id:
                 if not current_id is None:
                     write_record(current_id, min_minutes_diff, writer)
+                    min_minutes_diff = None
                 current_id = the_id
 
             node_type = line[2]
