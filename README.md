@@ -4,6 +4,8 @@ Final Project
 -------------
 
 This class is my final project for [Udacity's Hadoop and MapReduce course](https://www.udacity.com/course/ud617).  
+* [Project Evaluation](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/course/IntrotoHadoop-ProjectEvaluation-PaulReiners.pdf)
+* [Verified Certificate of Completion](https://github.com/paul-reiners/udacity-intro-hadoop-mapreduce/blob/master/course/IntroHadoopMapReduce.pdf)
 
 It is also intended as a portfolio project for my Hadoop and MapReduce skills.
 
